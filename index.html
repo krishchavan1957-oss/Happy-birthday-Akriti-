@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Akriti 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Caveat:wght@400;600&family=Pacifico&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --pink: #f4a7b9;
+    --deep-pink: #e8768f;
+    --cream: #fdf6ec;
+    --gold: #e8c96d;
+    --light-gold: #f5e6a3;
+    --lavender: #d4b8e0;
+    --soft-purple: #c9a8d8;
+    --peach: #f7cba8;
+    --warm-white: #fefaf5;
+    --shadow: rgba(180,120,140,0.18);
+  }
+
+  html, body {
+    width: 100%; height: 100%;
+    overflow: hidden;
+    background: #f9e8ef;
+    font-family: 'Kalam', cursive;
+  }
+
+  /* ── Floating Hearts ── */
+  #hearts-bg {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    overflow: hidden;
+  }
+  .fh {
+    position: absolute;
+    bottom: -60px;
+    font-size: 1.4rem;
+    animation: floatUp linear infinite;
+    opacity: 0;
+    user-select: none;
+  }
+  @keyframes floatUp {
+    0%   { transform: translateY(0) scale(0.8) rotate(-10deg); opacity: 0; }
+    10%  { opacity: 0.7; }
+    90%  { opacity: 0.5; }
+    100% { transform: translateY(-110vh) scale(1.1) rotate(15deg); opacity: 0; }
+  }
+
+  /* ── Scene Wrapper ── */
+  #scene {
+    position: fixed; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1;
+    perspective: 1400px;
+  }
+
+  /* ── Card Shell ── */
+  #card {
+    width: min(420px, 94vw);
+    height: min(580px, 88vh);
+    position: relative;
+    transform-style: preserve-3d;
+  }
+
+  /* ── Page Base ── */
+  .page {
+    position: absolute; inset: 0;
+    border-radius: 18px;
+    padding: 32px 28px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    backface-visibility: hidden;
+    transition: opacity 0.15s;
+    overflow: hidden;
+    box-shadow:
+      0 8px 40px rgba(180,100,130,0.22),
+      0 2px 8px rgba(180,100,130,0.12),
+      inset 0 0 60px rgba(255,240,248,0.4);
+  }
+  .page::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* paper fold shadow on left edge */
+  .page::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0; width: 18px;
+    background: linear-gradient(to right, rgba(180,120,140,0.10), transparent);
+    border-radius: 18px 0 0 18px;
+    pointer-events: none;
+    z-index: 11;
+  }
+
+  /* ── PAGE VISIBILITY ── */
+  .page { opacity: 0; pointer-events: none; }
+  .page.active { opacity: 1; pointer-events: all; }
+
+  /* ── Washi tape ── */
+  .tape {
+    position: absolute;
+    width: 80px; height: 24px;
+    border-radius: 3px;
+    opacity: 0.82;
+    transform: rotate(-8deg);
+    z-index: 12;
+  }
+  .tape-pink { background: repeating-linear-gradient(90deg, #f4a7b9 0 8px, #fad4de 8px 16px); }
+  .tape-gold  { background: repeating-linear-gradient(90deg, #e8c96d 0 8px, #f5e6a3 8px 16px); }
+  .tape-lav   { background: repeating-linear-gradient(90deg, #c9a8d8 0 8px, #e4d0f0 8px 16px); }
+
+  /* ══════════════════════════════
+     PAGE 1 — COVER
+  ══════════════════════════════ */
+  #page1 {
+    background:
+      radial-gradient(ellipse at 30% 20%, #fde8f0 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 80%, #f0e0f8 0%, transparent 50%),
+      linear-gradient(160deg, #fdf0f5 0%, #fef6ec 60%, #f7eef9 100%);
+  }
+
+  #cover-ribbon {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 60px; z-index: 13;
+  }
+  #cover-ribbon svg { width: 100%; }
+
+  .cover-title {
+    text-transform: capitalize;
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    color: #c45a7a;
+    text-align: center;
+    line-height: 1.35;
+    text-shadow: 2px 3px 0px rgba(220,140,160,0.25), 0 0 20px rgba(240,160,180,0.3);
+    margin-top: 24px;
+    position: relative; z-index: 5;
+  }
+
+  .cover-sub {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    color: #b06080;
+    margin-top: 10px;
+    text-align: center;
+    opacity: 0.9;
+    position: relative; z-index: 5;
+  }
+
+  /* big heart SVG */
+  #big-heart {
+    width: clamp(100px, 38vw, 150px);
+    margin: 18px 0 10px;
+    position: relative; z-index: 5;
+    animation: heartbeat 1.8s ease-in-out infinite;
+    filter: drop-shadow(0 4px 16px rgba(220,100,140,0.35));
+  }
+  @keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    14%      { transform: scale(1.12); }
+    28%      { transform: scale(1.06); }
+    42%      { transform: scale(1.13); }
+  }
+
+  /* doodle stars */
+  .doodle-star {
+    position: absolute; font-size: 1.1rem;
+    animation: twinkle 2.5s ease-in-out infinite;
+    z-index: 6;
+  }
+  @keyframes twinkle {
+    0%,100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    50%      { opacity: 0.4; transform: scale(0.7) rotate(20deg); }
+  }
+
+  #open-btn {
+    margin-top: 22px;
+    padding: 12px 34px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.25rem;
+    color: #fff;
+    background: linear-gradient(135deg, #e8768f, #c45a7a);
+    border: none; border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(200,90,120,0.35), 0 2px 4px rgba(200,90,120,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative; z-index: 14;
+    letter-spacing: 0.5px;
+  }
+  #open-btn:hover { transform: scale(1.06); box-shadow: 0 6px 24px rgba(200,90,120,0.45); }
+  #open-btn:active { transform: scale(0.97); }
+
+  /* ══════════════════════════════
+     PAGE 2 — CAKE
+  ══════════════════════════════ */
+  #page2 {
+    background:
+      radial-gradient(ellipse at 60% 10%, #fff8e8 0%, transparent 50%),
+      radial-gradient(ellipse at 20% 90%, #fde0ee 0%, transparent 55%),
+      linear-gradient(170deg, #fefaf0 0%, #fdf4f9 100%);
+    padding-bottom: 70px;
+  }
+
+  .cake-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.3rem, 4vw, 1.7rem);
+    color: #b06080;
+    text-align: center;
+    margin-bottom: 16px;
+    position: relative; z-index: 5;
+  }
+
+  #cake-wrap {
+    position: relative; z-index: 5;
+    display: flex; flex-direction: column; align-items: center;
+    cursor: pointer;
+  }
+
+  /* SVG Cake */
+  #cake-svg { width: clamp(160px, 45vw, 200px); filter: drop-shadow(0 6px 18px rgba(200,140,100,0.28)); }
+
+  .candle-flame {
+    animation: flicker 0.55s ease-in-out infinite alternate;
+    transform-origin: center bottom;
+    transform-box: fill-box;
+  }
+  @keyframes flicker {
+    from { transform: scaleY(1) scaleX(1) rotate(-4deg); opacity: 1; }
+    to   { transform: scaleY(0.82) scaleX(1.15) rotate(4deg); opacity: 0.88; }
+  }
+  .flame-gone { display: none; }
+
+  #cake-cut-line {
+    position: absolute;
+    width: 0; height: 0;
+    top: 50%; left: 50%;
+    border: none;
+    opacity: 0;
+    transition: none;
+  }
+  #cake-cut-line.cutting {
+    animation: cutSlice 0.7s ease forwards;
+  }
+  @keyframes cutSlice {
+    0%   { opacity: 0; }
+    30%  { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  #cake-hint {
+    font-family: 'Kalam', cursive;
+    font-size: 0.88rem;
+    color: #c07090;
+    margin-top: 10px;
+    opacity: 0.8;
+    transition: opacity 0.4s;
+  }
+
+  #wish-msg {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(0.95rem, 2.8vw, 1.15rem);
+    color: #a05070;
+    text-align: center;
+    margin-top: 14px;
+    line-height: 1.6;
+    max-width: 320px;
+    opacity: 0;
+    transition: opacity 0.8s 0.4s;
+    position: relative; z-index: 5;
+  }
+  #wish-msg.show { opacity: 1; }
+
+  /* confetti burst */
+  .confetto {
+    position: absolute;
+    width: 7px; height: 10px;
+    border-radius: 2px;
+    pointer-events: none;
+    animation: confettiFall 1.4s ease forwards;
+    z-index: 20;
+  }
+  @keyframes confettiFall {
+    0%   { transform: translate(0,0) rotate(0deg); opacity: 1; }
+    100% { transform: translate(var(--cx), var(--cy)) rotate(var(--cr)); opacity: 0; }
+  }
+
+  /* ══════════════════════════════
+     PAGE 3 — ROMANTIC MESSAGE
+  ══════════════════════════════ */
+  #page3 {
+    background:
+      radial-gradient(ellipse at 70% 15%, #f8e8f8 0%, transparent 50%),
+      radial-gradient(ellipse at 20% 85%, #fde8f0 0%, transparent 55%),
+      linear-gradient(155deg, #fdf4fb 0%, #fef8f2 100%);
+    justify-content: flex-start;
+    padding-top: 36px;
+    padding-bottom: 0;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  .page3-heading {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(1.15rem, 3.5vw, 1.5rem);
+    color: #c45a7a;
+    text-align: center;
+    margin-bottom: 18px;
+    position: relative; z-index: 5;
+    text-shadow: 1px 2px 0 rgba(220,140,160,0.2);
+  }
+
+  .romantic-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1rem, 3vw, 1.22rem);
+    color: #7a3a55;
+    text-align: center;
+    line-height: 1.95;
+    max-width: 340px;
+    position: relative; z-index: 5;
+    padding: 20px 18px;
+    background: rgba(255,245,250,0.75);
+    border-radius: 14px;
+    border: 1.5px dashed rgba(220,150,180,0.45);
+    box-shadow: 0 2px 16px rgba(220,150,180,0.12), inset 0 0 20px rgba(255,235,245,0.5);
+  }
+
+  /* pressed flower decoration */
+  .flower-deco {
+    position: absolute;
+    font-size: 1.6rem;
+    opacity: 0.55;
+    z-index: 6;
+    filter: saturate(0.8) brightness(1.1);
+  }
+
+  /* heart divider */
+  .heart-divider {
+    display: flex; align-items: center; gap: 8px;
+    color: var(--pink); font-size: 1rem;
+    margin: 14px 0;
+    position: relative; z-index: 5;
+  }
+  .heart-divider::before, .heart-divider::after {
+    content: '';
+    flex: 1; height: 1.5px;
+    background: linear-gradient(to right, transparent, #f4a7b9, transparent);
+    max-width: 80px;
+  }
+
+  /* ══════════════════════════════
+     PAGE 4 — EMOTIONAL WISH
+  ══════════════════════════════ */
+  #page4 {
+    background:
+      radial-gradient(ellipse at 30% 30%, #fff0f8 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 80%, #f0e8fc 0%, transparent 50%),
+      linear-gradient(160deg, #fef8fc 0%, #fdf6f0 100%);
+    justify-content: flex-start;
+    padding-top: 28px;
+    padding-bottom: 0;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  .wish-heading {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(1.1rem, 3.5vw, 1.45rem);
+    color: #9b4a7a;
+    text-align: center;
+    margin-bottom: 16px;
+    position: relative; z-index: 5;
+  }
+
+  .wish-letter {
+    font-family: 'Kalam', cursive;
+    font-size: clamp(0.87rem, 2.5vw, 1.02rem);
+    color: #6a3050;
+    line-height: 1.9;
+    max-width: 345px;
+    position: relative; z-index: 5;
+    padding: 18px 20px;
+    background: rgba(255,250,255,0.78);
+    border-radius: 12px;
+    border: 1.5px solid rgba(200,140,180,0.3);
+    box-shadow:
+      0 3px 18px rgba(180,100,150,0.1),
+      inset 0 0 30px rgba(255,240,255,0.4);
+  }
+  .wish-letter p { margin-bottom: 12px; }
+  .wish-letter .sign {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.15rem;
+    color: #c45a7a;
+    text-align: right;
+    margin-top: 8px;
+  }
+
+  .stamp {
+    position: absolute;
+    bottom: 22px; right: 22px;
+    width: 54px; height: 54px;
+    border: 2.5px solid rgba(200,130,160,0.55);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.7rem;
+    color: rgba(200,100,140,0.6);
+    transform: rotate(8deg);
+    background: rgba(255,245,252,0.6);
+    z-index: 13;
+  }
+
+  /* ── NAV BUTTONS ── */
+  .nav-row {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 62px;
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    z-index: 16;
+    background: linear-gradient(to top, rgba(253,246,252,0.97) 65%, transparent);
+    border-radius: 0 0 18px 18px;
+    pointer-events: all;
+  }
+
+  .nav-btn {
+    padding: 8px 22px;
+    font-family: 'Kalam', cursive;
+    font-size: 0.95rem;
+    border: none; border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.18s, box-shadow 0.18s;
+    letter-spacing: 0.3px;
+  }
+  .nav-btn.prev {
+    background: linear-gradient(135deg, #e4d0f0, #c9a8d8);
+    color: #5a3070;
+    box-shadow: 0 3px 12px rgba(180,140,220,0.3);
+  }
+  .nav-btn.next {
+    background: linear-gradient(135deg, #f4a7b9, #e8768f);
+    color: #fff;
+    box-shadow: 0 3px 12px rgba(220,100,140,0.35);
+  }
+  .nav-btn:hover { transform: scale(1.07); }
+  .nav-btn:active { transform: scale(0.96); }
+
+  /* page indicator dots */
+  #dots {
+    position: fixed;
+    bottom: 18px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 8px; z-index: 20;
+  }
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(220,150,180,0.35);
+    transition: background 0.3s, transform 0.3s;
+  }
+  .dot.on {
+    background: #e8768f;
+    transform: scale(1.3);
+  }
+
+  /* ── PAGE FLIP TRANSITION ── */
+  #card { transition: none; }
+
+  /* flip out (current page leaving) */
+  @keyframes flipOut {
+    0%   { transform: rotateY(0deg); opacity: 1; }
+    50%  { transform: rotateY(-90deg); opacity: 0.3; }
+    100% { transform: rotateY(-90deg); opacity: 0; }
+  }
+  @keyframes flipIn {
+    0%   { transform: rotateY(90deg); opacity: 0; }
+    50%  { transform: rotateY(90deg); opacity: 0.3; }
+    100% { transform: rotateY(0deg); opacity: 1; }
+  }
+  .flip-out { animation: flipOut 0.38s ease forwards; }
+  .flip-in  { animation: flipIn  0.38s ease 0.28s forwards; opacity: 0; }
+
+  /* ── SPARKLE ── */
+  .sparkle {
+    position: absolute; pointer-events: none; font-size: 1rem; z-index: 25;
+    animation: sparkleAnim 1s ease forwards;
+  }
+  @keyframes sparkleAnim {
+    0%   { transform: scale(0) rotate(0deg); opacity: 1; }
+    60%  { transform: scale(1.4) rotate(45deg); opacity: 1; }
+    100% { transform: scale(0.5) rotate(90deg); opacity: 0; }
+  }
+
+  /* scrollbar for page 4 */
+  #page4::-webkit-scrollbar { width: 5px; }
+  #page4::-webkit-scrollbar-track { background: transparent; }
+  #page4::-webkit-scrollbar-thumb { background: rgba(220,150,180,0.4); border-radius: 10px; }
+
+  /* ── Scrollable inner area for pages 3 & 4 ── */
+  .page-scroll {
+    flex: 1;
+    min-height: 0;          /* ← KEY: lets flex child actually shrink & scroll */
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 4px 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .page-scroll::-webkit-scrollbar { width: 4px; }
+  .page-scroll::-webkit-scrollbar-track { background: transparent; }
+  .page-scroll::-webkit-scrollbar-thumb { background: rgba(220,150,180,0.35); border-radius: 10px; }
+
+  /* nav-row pinned at the bottom as a normal flex child (pages 3 & 4) */
+  #page3 .nav-row,
+  #page4 .nav-row {
+    position: relative;
+    bottom: auto; left: auto; right: auto;
+    flex-shrink: 0;
+    width: 100%;
+    margin-top: 0;
+    height: 58px;
+    background: linear-gradient(to top, rgba(253,246,252,0.98) 70%, transparent);
+    border-radius: 0 0 18px 18px;
+  }
+
+  @media (max-height: 620px) {
+    #card { height: 95vh; }
+    .page { padding: 20px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating hearts layer -->
+<div id="hearts-bg"></div>
+
+<div id="scene">
+  <div id="card">
+
+    <!-- ══ PAGE 1: COVER ══ -->
+    <div class="page active" id="page1">
+      <!-- washi tapes -->
+      <div class="tape tape-gold" style="top:-8px;left:30px;transform:rotate(-7deg)"></div>
+      <div class="tape tape-pink" style="top:-8px;right:40px;transform:rotate(6deg)"></div>
+
+      <!-- ribbon top -->
+      <div id="cover-ribbon">
+        <svg viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 38 L5 8 Q30 20 55 8 Z" fill="#f4a7b9" opacity="0.85"/>
+          <path d="M30 38 L5 8 Q30 20 55 8 Z" fill="none" stroke="#e8768f" stroke-width="1" opacity="0.6"/>
+          <circle cx="30" cy="20" r="7" fill="#fde8f0" stroke="#e8768f" stroke-width="1.5"/>
+          <circle cx="30" cy="20" r="3" fill="#e8768f"/>
+        </svg>
+      </div>
+
+      <!-- doodle stars -->
+      <span class="doodle-star" style="top:70px;left:22px;animation-delay:0s">✦</span>
+      <span class="doodle-star" style="top:55px;right:25px;animation-delay:0.7s;font-size:0.8rem">★</span>
+      <span class="doodle-star" style="bottom:130px;left:18px;animation-delay:1.2s;font-size:0.7rem;color:#d4b8e0">✧</span>
+      <span class="doodle-star" style="bottom:110px;right:20px;animation-delay:0.4s;font-size:0.9rem;color:#e8c96d">✦</span>
+      <span class="doodle-star" style="top:170px;left:30px;animation-delay:0.9s;font-size:0.7rem">❋</span>
+      <span class="doodle-star" style="top:200px;right:28px;animation-delay:1.5s;font-size:0.65rem;color:#c9a8d8">✿</span>
+
+      <!-- small floating hearts -->
+      <span style="position:absolute;top:90px;left:40px;font-size:0.8rem;opacity:0.55;color:#f4a7b9;animation:twinkle 2s infinite;z-index:6">♡</span>
+      <span style="position:absolute;top:130px;right:38px;font-size:0.7rem;opacity:0.5;color:#c9a8d8;animation:twinkle 3s 0.5s infinite;z-index:6">♡</span>
+      <span style="position:absolute;bottom:160px;left:45px;font-size:0.75rem;opacity:0.45;color:#e8c96d;animation:twinkle 2.5s 1s infinite;z-index:6">♡</span>
+
+      <!-- handmade lily bouquet (jute + pink tissue + lace ribbon) -->
+      <svg id="bouquet" viewBox="0 0 120 165" xmlns="http://www.w3.org/2000/svg"
+           style="position:absolute;bottom:6px;right:-2px;width:clamp(92px,25vw,104px);z-index:7;transform:rotate(6deg);filter:drop-shadow(2px 4px 6px rgba(150,80,110,0.28));">
+        <defs>
+          <pattern id="burlap" width="3" height="3" patternUnits="userSpaceOnUse">
+            <path d="M0 0 L3 3 M3 0 L0 3" stroke="rgba(140,100,55,0.38)" stroke-width="0.5"/>
+          </pattern>
+          <!-- open pink lily -->
+          <g id="lily">
+            <g fill="currentColor" stroke="rgba(255,205,220,0.95)" stroke-width="0.9" stroke-linejoin="round">
+              <path d="M0 0 Q-7 -9 -1 -24 Q0 -28 1 -24 Q7 -9 0 0Z" transform="rotate(30)"/>
+              <path d="M0 0 Q-7 -9 -1 -24 Q0 -28 1 -24 Q7 -9 0 0Z" transform="rotate(90)"/>
+              <path d="M0 0 Q-7 -9 -1 -24 Q0 -28 1 -24 Q7 -9 0 0Z" transform="rotate(150)"/>
+              <path d="M0 0 Q-7 -9 -1 -24 Q0 -28 1 -24 Q7 -9 0 0Z" transform="rotate(210)"/>
+              <path d="M0 0 Q-7 -9 -1 -24 Q0 -28 1 -24 Q7 -9 0 0Z" transform="rotate(270)"/>
+              <path d="M0 0 Q-7 -9 -1 -24 Q0 -28 1 -24 Q7 -9 0 0Z" transform="rotate(330)"/>
+            </g>
+            <g stroke="rgba(190,40,100,0.6)" stroke-width="1.1" stroke-linecap="round" fill="none">
+              <path d="M0 -3 L0 -18" transform="rotate(30)"/>
+              <path d="M0 -3 L0 -18" transform="rotate(90)"/>
+              <path d="M0 -3 L0 -18" transform="rotate(150)"/>
+              <path d="M0 -3 L0 -18" transform="rotate(210)"/>
+              <path d="M0 -3 L0 -18" transform="rotate(270)"/>
+              <path d="M0 -3 L0 -18" transform="rotate(330)"/>
+            </g>
+            <circle r="3.6" fill="#e6e27a"/>
+            <g stroke="#d9a53a" stroke-width="0.9" stroke-linecap="round">
+              <line x1="0" y1="0" x2="0" y2="-11"/><line x1="0" y1="0" x2="9" y2="-5"/>
+              <line x1="0" y1="0" x2="-9" y2="-5"/><line x1="0" y1="0" x2="7" y2="7"/>
+              <line x1="0" y1="0" x2="-7" y2="7"/><line x1="0" y1="0" x2="0" y2="10"/>
+            </g>
+            <g fill="#c8641e">
+              <circle cx="0" cy="-11" r="1.7"/><circle cx="9" cy="-5" r="1.7"/><circle cx="-9" cy="-5" r="1.7"/>
+              <circle cx="7" cy="7" r="1.7"/><circle cx="-7" cy="7" r="1.7"/><circle cx="0" cy="10" r="1.7"/>
+            </g>
+          </g>
+          <!-- green lily bud -->
+          <g id="lbud">
+            <path d="M0 0 Q-8 -12 0 -30 Q8 -12 0 0Z" fill="currentColor" stroke="rgba(70,120,50,0.7)" stroke-width="0.8"/>
+            <path d="M0 -2 Q-1 -14 0 -26" stroke="rgba(70,120,50,0.55)" stroke-width="1" fill="none"/>
+          </g>
+        </defs>
+
+        <!-- jute wrap (back) -->
+        <path d="M58 134 L10 58 Q6 34 24 30 Q34 14 52 24 Q64 10 82 22 Q104 18 106 46 Q110 60 62 134Z" fill="#d9bb8c" stroke="#b8956a" stroke-width="1"/>
+        <path d="M58 134 L10 58 Q6 34 24 30 Q34 14 52 24 Q64 10 82 22 Q104 18 106 46 Q110 60 62 134Z" fill="url(#burlap)"/>
+
+        <!-- pink tissue flares -->
+        <path d="M58 134 L6 66 Q2 48 14 52 Q24 58 34 76 L58 108Z" fill="#f8c8d6" stroke="#eaa0b6" stroke-width="0.8"/>
+        <path d="M62 134 L114 70 Q118 52 106 56 Q96 62 86 80 L62 108Z" fill="#f8c8d6" stroke="#eaa0b6" stroke-width="0.8"/>
+
+        <!-- green buds -->
+        <use href="#lbud" transform="translate(56 54) rotate(-8)" style="color:#cfe39a"/>
+        <use href="#lbud" transform="translate(68 56) rotate(10)" style="color:#d8e9a6"/>
+        <use href="#lbud" transform="translate(24 62) rotate(-62) scale(0.9)" style="color:#c4dc8a"/>
+
+        <!-- dark leaves -->
+        <g fill="#4f8a4a" stroke="#3d6e3a" stroke-width="0.6">
+          <path d="M0 0 Q-5 -12 0 -26 Q5 -12 0 0Z" transform="translate(76 66) rotate(40)"/>
+          <path d="M0 0 Q-5 -12 0 -26 Q5 -12 0 0Z" transform="translate(44 70) rotate(-40)"/>
+          <path d="M0 0 Q-5 -12 0 -26 Q5 -12 0 0Z" transform="translate(62 76) rotate(6)"/>
+        </g>
+
+        <!-- pink lilies -->
+        <use href="#lily" transform="translate(36 50) scale(0.62) rotate(-10)" style="color:#e8628c"/>
+        <use href="#lily" transform="translate(84 62) scale(0.8) rotate(14)" style="color:#e8688f"/>
+        <use href="#lily" transform="translate(34 84) scale(0.85) rotate(-18)" style="color:#f08cae"/>
+        <use href="#lily" transform="translate(62 68) scale(0.95)" style="color:#ee7ba0"/>
+
+        <!-- gathered wrap at the bottom -->
+        <path d="M50 124 Q42 142 38 154 Q60 162 82 154 Q78 142 70 124Z" fill="#d9bb8c" stroke="#b8956a" stroke-width="0.8"/>
+        <path d="M50 124 Q42 142 38 154 Q60 162 82 154 Q78 142 70 124Z" fill="url(#burlap)"/>
+        <path d="M54 126 Q51 142 52 156 Q60 158 68 156 Q69 142 66 126Z" fill="#f9cdd9" stroke="#eaa0b6" stroke-width="0.6"/>
+
+        <!-- front pink paper -->
+        <path d="M20 92 Q40 112 60 112 Q80 112 100 92 L68 136 L52 136Z" fill="#f9cdd9" stroke="#eaa0b6" stroke-width="0.8"/>
+
+        <!-- baby's breath -->
+        <g stroke="#8fae7e" stroke-width="0.6" fill="none">
+          <path d="M28 108 Q22 100 17 95"/><path d="M92 108 Q99 100 105 95"/>
+          <path d="M44 106 Q40 98 38 94"/><path d="M78 106 Q82 98 86 94"/>
+        </g>
+        <g fill="#ffffff" stroke="#e6dccb" stroke-width="0.3">
+          <circle cx="17" cy="95" r="1.7"/><circle cx="22" cy="100" r="1.6"/><circle cx="25" cy="105" r="1.7"/>
+          <circle cx="19" cy="103" r="1.4"/><circle cx="31" cy="107" r="1.5"/>
+          <circle cx="105" cy="95" r="1.7"/><circle cx="99" cy="100" r="1.6"/><circle cx="95" cy="105" r="1.7"/>
+          <circle cx="102" cy="103" r="1.4"/><circle cx="90" cy="108" r="1.5"/>
+          <circle cx="38" cy="94" r="1.4"/><circle cx="43" cy="100" r="1.5"/>
+          <circle cx="86" cy="94" r="1.4"/><circle cx="81" cy="100" r="1.5"/>
+        </g>
+
+        <!-- lace ribbon tails -->
+        <g fill="none" stroke-linecap="round">
+          <path d="M58 132 Q52 148 42 162" stroke="#f7a8cc" stroke-width="5"/>
+          <path d="M62 132 Q70 148 78 162" stroke="#f7a8cc" stroke-width="5"/>
+          <path d="M60 132 Q66 150 58 164" stroke="#f7a8cc" stroke-width="4"/>
+          <path d="M58 132 Q52 148 42 162" stroke="#fff" stroke-width="1.1" stroke-dasharray="1.4 2" opacity="0.85"/>
+          <path d="M62 132 Q70 148 78 162" stroke="#fff" stroke-width="1.1" stroke-dasharray="1.4 2" opacity="0.85"/>
+          <path d="M60 132 Q66 150 58 164" stroke="#fff" stroke-width="1" stroke-dasharray="1.4 2" opacity="0.85"/>
+        </g>
+        <!-- lace bow -->
+        <path d="M60 130 Q36 114 32 132 Q46 142 60 130Z" fill="#f7a8cc" stroke="#e57fb0" stroke-width="1" stroke-dasharray="2 1.4"/>
+        <path d="M60 130 Q84 114 88 132 Q74 142 60 130Z" fill="#f7a8cc" stroke="#e57fb0" stroke-width="1" stroke-dasharray="2 1.4"/>
+        <circle cx="60" cy="131" r="4.5" fill="#f9b6d4" stroke="#e57fb0" stroke-width="1.1"/>
+      </svg>
+
+      <!-- big heart -->
+      <svg id="big-heart" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="hg" cx="40%" cy="35%">
+            <stop offset="0%" stop-color="#fde8f0"/>
+            <stop offset="50%" stop-color="#f4a7b9"/>
+            <stop offset="100%" stop-color="#e8768f"/>
+          </radialGradient>
+          <radialGradient id="hg2" cx="60%" cy="70%">
+            <stop offset="0%" stop-color="#c45a7a" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#c45a7a" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <path d="M50 82 C50 82 10 56 10 30 C10 16 22 8 35 12 C42 14 47 20 50 26 C53 20 58 14 65 12 C78 8 90 16 90 30 C90 56 50 82 50 82Z" fill="url(#hg)"/>
+        <path d="M50 82 C50 82 10 56 10 30 C10 16 22 8 35 12 C42 14 47 20 50 26 C53 20 58 14 65 12 C78 8 90 16 90 30 C90 56 50 82 50 82Z" fill="url(#hg2)"/>
+        <!-- shine -->
+        <ellipse cx="35" cy="30" rx="8" ry="5" fill="white" opacity="0.35" transform="rotate(-15 35 30)"/>
+        <!-- small inner hearts -->
+        <text x="38" y="52" font-size="14" fill="rgba(255,255,255,0.5)" font-family="serif">♡</text>
+      </svg>
+
+      <div class="cover-title">Happy Birthday<br>Akriti ❤️</div>
+
+      <button id="open-btn" onclick="goToPage(2)">Open Card 💌</button>
+
+      <div class="nav-row" style="bottom:8px"><!-- spacer --></div>
+    </div>
+
+    <!-- ══ PAGE 2: CAKE ══ -->
+    <div class="page" id="page2">
+      <div class="tape tape-lav" style="top:-8px;left:50%;transform:translateX(-50%) rotate(-2deg)"></div>
+
+      <span class="doodle-star" style="top:50px;left:20px;animation-delay:0.3s;color:#e8c96d">✦</span>
+      <span class="doodle-star" style="top:60px;right:22px;animation-delay:1s;font-size:0.8rem">✧</span>
+      <span class="doodle-star" style="bottom:90px;left:16px;animation-delay:0.6s;font-size:0.7rem;color:#c9a8d8">★</span>
+
+      <div class="cake-title">Make a Wish, Akriti 🎂</div>
+
+      <div id="cake-wrap" onclick="cutCake()">
+        <svg id="cake-svg" viewBox="0 0 200 185" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- flame glow filter -->
+            <filter id="flameGlow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="flameGlow2" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="3.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- plate shadow -->
+          <ellipse cx="100" cy="170" rx="72" ry="8" fill="rgba(180,120,100,0.15)"/>
+
+          <!-- cake base tier (bottom) -->
+          <rect x="28" y="122" width="144" height="44" rx="8" fill="#f7c5a0"/>
+          <rect x="28" y="122" width="144" height="10" fill="#f9d4b8" opacity="0.7"/>
+          <circle cx="58"  cy="144" r="5" fill="#e8768f" opacity="0.7"/>
+          <circle cx="79"  cy="144" r="5" fill="#f4a7b9" opacity="0.7"/>
+          <circle cx="100" cy="144" r="5" fill="#e8c96d" opacity="0.7"/>
+          <circle cx="121" cy="144" r="5" fill="#c9a8d8" opacity="0.7"/>
+          <circle cx="142" cy="144" r="5" fill="#e8768f" opacity="0.7"/>
+          <path d="M28 130 Q43 120 58 130 Q73 120 88 130 Q103 120 118 130 Q133 120 148 130 Q163 120 172 130" stroke="#fde8d8" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+          <!-- tier middle -->
+          <rect x="50" y="87" width="100" height="38" rx="7" fill="#f4a7b9"/>
+          <rect x="50" y="87" width="100" height="9" fill="#fbd0dd" opacity="0.7"/>
+          <text x="71" y="113" font-size="11" fill="rgba(255,255,255,0.75)" font-family="serif">♡</text>
+          <text x="90" y="113" font-size="11" fill="rgba(255,255,255,0.75)" font-family="serif">♡</text>
+          <text x="109" y="113" font-size="11" fill="rgba(255,255,255,0.75)" font-family="serif">♡</text>
+          <path d="M50 95 Q62 86 74 95 Q86 86 98 95 Q110 86 122 95 Q134 86 150 95" stroke="#fde0e8" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+          <!-- tier top -->
+          <rect x="70" y="57" width="60" height="32" rx="7" fill="#c9a8d8"/>
+          <rect x="70" y="57" width="60" height="8" fill="#ddc8ec" opacity="0.7"/>
+          <text x="84" y="79" font-size="10" fill="rgba(255,255,255,0.8)" font-family="serif">✦</text>
+          <text x="104" y="79" font-size="10" fill="rgba(255,255,255,0.8)" font-family="serif">✦</text>
+
+          <!-- ── CANDLE 1 (left) ── -->
+          <rect x="79" y="36" width="9" height="23" rx="3" fill="#e8768f"/>
+          <ellipse cx="83.5" cy="36" rx="4.5" ry="2.2" fill="#c45a7a"/>
+          <!-- wick -->
+          <line x1="83.5" y1="36" x2="83.5" y2="31" stroke="#4a2a1a" stroke-width="1.2" stroke-linecap="round"/>
+          <!-- flame 1 -->
+          <g id="f1" class="candle-flame" filter="url(#flameGlow)">
+            <!-- outer glow -->
+            <ellipse cx="83.5" cy="22" rx="7" ry="9" fill="#ffdd00" opacity="0.3"/>
+            <!-- main flame body -->
+            <path d="M83.5 31 C79 28 77 22 79 16 C80 12 83.5 8 83.5 8 C83.5 8 87 12 88 16 C90 22 88 28 83.5 31Z" fill="#ffdd00"/>
+            <!-- inner flame -->
+            <path d="M83.5 29 C81 27 80 23 81 19 C81.5 16 83.5 13 83.5 13 C83.5 13 85.5 16 86 19 C87 23 86 27 83.5 29Z" fill="#ff9500"/>
+            <!-- hot core -->
+            <path d="M83.5 27 C82 26 82 23 82.5 21 C83 19 83.5 18 83.5 18 C83.5 18 84 19 84.5 21 C85 23 85 26 83.5 27Z" fill="#fff5a0"/>
+          </g>
+
+          <!-- ── CANDLE 2 (centre) ── -->
+          <rect x="96" y="31" width="9" height="28" rx="3" fill="#c9a8d8"/>
+          <ellipse cx="100.5" cy="31" rx="4.5" ry="2.2" fill="#9b7ab0"/>
+          <line x1="100.5" y1="31" x2="100.5" y2="26" stroke="#4a2a1a" stroke-width="1.2" stroke-linecap="round"/>
+          <!-- flame 2 -->
+          <g id="f2" class="candle-flame" style="animation-delay:0.18s" filter="url(#flameGlow)">
+            <ellipse cx="100.5" cy="17" rx="7" ry="9" fill="#ffdd00" opacity="0.3"/>
+            <path d="M100.5 26 C96 23 94 17 96 11 C97 7 100.5 3 100.5 3 C100.5 3 104 7 105 11 C107 17 105 23 100.5 26Z" fill="#ffdd00"/>
+            <path d="M100.5 24 C98 22 97 18 98 14 C98.5 11 100.5 8 100.5 8 C100.5 8 102.5 11 103 14 C104 18 103 22 100.5 24Z" fill="#ff9500"/>
+            <path d="M100.5 22 C99 21 99 18 99.5 16 C100 14 100.5 13 100.5 13 C100.5 13 101 14 101.5 16 C102 18 102 21 100.5 22Z" fill="#fff5a0"/>
+          </g>
+
+          <!-- ── CANDLE 3 (right) ── -->
+          <rect x="113" y="36" width="9" height="23" rx="3" fill="#e8c96d"/>
+          <ellipse cx="117.5" cy="36" rx="4.5" ry="2.2" fill="#c9a030"/>
+          <line x1="117.5" y1="36" x2="117.5" y2="31" stroke="#4a2a1a" stroke-width="1.2" stroke-linecap="round"/>
+          <!-- flame 3 -->
+          <g id="f3" class="candle-flame" style="animation-delay:0.36s" filter="url(#flameGlow)">
+            <ellipse cx="117.5" cy="22" rx="7" ry="9" fill="#ffdd00" opacity="0.3"/>
+            <path d="M117.5 31 C113 28 111 22 113 16 C114 12 117.5 8 117.5 8 C117.5 8 121 12 122 16 C124 22 122 28 117.5 31Z" fill="#ffdd00"/>
+            <path d="M117.5 29 C115 27 114 23 115 19 C115.5 16 117.5 13 117.5 13 C117.5 13 119.5 16 120 19 C121 23 120 27 117.5 29Z" fill="#ff9500"/>
+            <path d="M117.5 27 C116 26 116 23 116.5 21 C117 19 117.5 18 117.5 18 C117.5 18 118 19 118.5 21 C119 23 119 26 117.5 27Z" fill="#fff5a0"/>
+          </g>
+
+          <!-- cut line -->
+          <line id="cake-cut" x1="100" y1="57" x2="100" y2="166" stroke="rgba(255,255,255,0)" stroke-width="2.5" stroke-dasharray="5,4"/>
+        </svg>
+
+        <div id="cake-hint">👆 Tap to blow candles & cut!</div>
+      </div>
+
+      <div id="wish-msg">
+        🌟 Close your eyes...<br>
+        Make the most beautiful wish<br>
+        because you deserve every dream 🌸✨
+      </div>
+
+      <div class="nav-row">
+        <button class="nav-btn prev" onclick="goToPage(1)">◀ Back</button>
+        <button class="nav-btn next" onclick="goToPage(3)">Next ▶</button>
+      </div>
+    </div>
+
+    <!-- ══ PAGE 3: ROMANTIC MESSAGE ══ -->
+    <div class="page" id="page3">
+      <div class="tape tape-pink" style="top:-8px;left:25px;transform:rotate(-5deg)"></div>
+      <div class="tape tape-gold" style="top:-8px;right:30px;transform:rotate(7deg)"></div>
+
+      <!-- pressed flowers -->
+      <span class="flower-deco" style="top:55px;right:18px;transform:rotate(20deg)">🌸</span>
+      <span class="flower-deco" style="bottom:70px;left:15px;transform:rotate(-15deg)">🌷</span>
+      <span class="flower-deco" style="top:52px;left:18px;transform:rotate(-10deg);font-size:1.1rem">✿</span>
+
+      <div class="page-scroll">
+        <div class="page3-heading">For You, My Everything 💜</div>
+        <div class="heart-divider">♡</div>
+        <div class="romantic-text">
+          You are the best thing that<br>
+          ever happened to me. 🌹<br><br>
+          In your smile I find my home,<br>
+          in your eyes my forever. ✨<br><br>
+          I promise to always stand<br>
+          by your side and love you<br>
+          with every beat of my heart,<br>
+          forever & always. ❤️
+        </div>
+        <div class="heart-divider" style="margin-top:14px">♡ ♡ ♡</div>
+      </div>
+
+      <div class="nav-row">
+        <button class="nav-btn prev" onclick="goToPage(2)">◀ Back</button>
+        <button class="nav-btn next" onclick="goToPage(4)">Next ▶</button>
+      </div>
+    </div>
+
+    <!-- ══ PAGE 4: EMOTIONAL WISH ══ -->
+    <div class="page" id="page4">
+      <div class="tape tape-lav" style="top:-8px;left:35px;transform:rotate(-6deg)"></div>
+      <div class="tape tape-pink" style="top:-8px;right:28px;transform:rotate(5deg)"></div>
+
+      <span class="flower-deco" style="top:48px;right:15px;transform:rotate(12deg);font-size:1.2rem">🌼</span>
+
+      <div class="page-scroll">
+        <div class="wish-heading">A Letter From My Heart 💌</div>
+        <div class="wish-letter">
+          <p>My dearest Akriti, my babu 💖</p>
+          <p>Happy Birthday, my cutie pie. 🎂 I wanted to write this from my heart, because no gift in the world can say what you mean to me.</p>
+          <p>Do you remember how we started? Two people in a group chat call, acting like a fake girlfriend and boyfriend just for fun. I never knew that this "acting" would become the most real thing in my life. Somewhere between all those laughs, my heart stopped acting and fell for you. 🌸</p>
+          <p>It has only been a month since we became <em>us</em>, but it feels like I have known you forever. You came into my life so softly, and now everything feels brighter because of you.</p>
+          <p>You are so cute, my sweet heart, and so beautiful, not only on the outside but in your heart too. Your love is real, and you show it every single day. You always stay with me, you never let anything hurt me, and you take care of me like a life partner would. I have never felt so safe and so loved. 🌺</p>
+          <p>I won't lie, baby, the distance is hard. When you go offline, everything feels empty. Nothing feels good, and I just keep waiting for you to come back. That is when I understand how much you matter to me. 🌙</p>
+          <p>I want to meet you as soon as I can. We both have our own responsibilities right now, but I promise you, one day I will stand in front of you, hold your hand, and tell you everything I could never say through a phone screen. Until then, I am yours from far away, with my whole heart. 🤍</p>
+          <p>Today, I am not asking for anything for myself. I only pray that you always smile, always stay happy, and always stay mine. May this new year give you all the love you give to everyone else. 🎂✨</p>
+          <p>You are the most important part of my life, bacha. I want to be with you always, and I want to spend the rest of my life with you, enjoying every little moment together. I really, really love you so much. 💕</p>
+          <div class="sign">Forever yours, with all my love 💕<br><span style="font-size:0.9rem">You are my life, my sweet heart</span></div>
+        </div>
+      </div>
+
+      <div class="nav-row">
+        <button class="nav-btn prev" onclick="goToPage(3)">◀ Back</button>
+        <button class="nav-btn next" onclick="goToPage(1)">🏠 Cover</button>
+      </div>
+    </div>
+
+  </div><!-- /#card -->
+</div><!-- /#scene -->
+
+<!-- dots -->
+<div id="dots">
+  <div class="dot on" id="d1"></div>
+  <div class="dot" id="d2"></div>
+  <div class="dot" id="d3"></div>
+  <div class="dot" id="d4"></div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────
+// FLOATING HEARTS
+// ─────────────────────────────────────────────
+(function spawnHearts(){
+  const bg = document.getElementById('hearts-bg');
+  const emojis = ['❤️','💕','💖','💗','💓','♡','💝','🌸','✨','💫'];
+  function spawn(){
+    const h = document.createElement('span');
+    h.className = 'fh';
+    h.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    h.style.left = Math.random()*100 + 'vw';
+    h.style.fontSize = (0.9 + Math.random()*1.2) + 'rem';
+    const dur = 8 + Math.random()*10;
+    h.style.animationDuration = dur + 's';
+    h.style.animationDelay = (Math.random()*4) + 's';
+    bg.appendChild(h);
+    setTimeout(()=>h.remove(), (dur+5)*1000);
+  }
+  for(let i=0;i<14;i++) spawn();
+  setInterval(spawn, 1800);
+})();
+
+// ─────────────────────────────────────────────
+// PAGE NAVIGATION
+// ─────────────────────────────────────────────
+let current = 1;
+const total = 4;
+
+function goToPage(n){
+  if(n === current) return;
+  const oldPage = document.getElementById('page'+current);
+  const newPage = document.getElementById('page'+n);
+
+  oldPage.classList.add('flip-out');
+  newPage.classList.add('flip-in');
+  newPage.style.opacity = '0';
+
+  setTimeout(()=>{
+    oldPage.classList.remove('active','flip-out');
+    newPage.classList.add('active');
+    newPage.classList.remove('flip-in');
+    newPage.style.opacity = '';
+    current = n;
+    updateDots();
+    spawnSparkles(newPage);
+  }, 420);
+}
+
+function updateDots(){
+  for(let i=1;i<=total;i++){
+    document.getElementById('d'+i).classList.toggle('on', i===current);
+  }
+}
+
+function spawnSparkles(page){
+  const sparks = ['✦','✧','★','✿','❋'];
+  for(let i=0;i<5;i++){
+    const s = document.createElement('span');
+    s.className = 'sparkle';
+    s.textContent = sparks[Math.floor(Math.random()*sparks.length)];
+    s.style.left = (15+Math.random()*70)+'%';
+    s.style.top  = (15+Math.random()*70)+'%';
+    s.style.color = ['#f4a7b9','#e8c96d','#c9a8d8','#e8768f'][Math.floor(Math.random()*4)];
+    s.style.animationDelay = (i*0.1)+'s';
+    page.appendChild(s);
+    setTimeout(()=>s.remove(), 1200);
+  }
+}
+
+// ─────────────────────────────────────────────
+// CAKE INTERACTION
+// ─────────────────────────────────────────────
+let cakeDone = false;
+
+function cutCake(){
+  if(cakeDone) return;
+  cakeDone = true;
+
+  // blow out flames
+  ['f1','f2','f3'].forEach((id,i)=>{
+    setTimeout(()=>{
+      const f = document.getElementById(id);
+      f.style.transition = 'opacity 0.3s';
+      f.style.opacity = '0';
+      setTimeout(()=>f.classList.add('flame-gone'), 350);
+    }, i*150);
+  });
+
+  // show cut line
+  setTimeout(()=>{
+    const line = document.getElementById('cake-cut');
+    line.style.stroke = 'rgba(255,255,255,0.85)';
+    line.style.transition = 'stroke 0.3s';
+
+    // animate cut glow
+    let glow = 0;
+    const gInt = setInterval(()=>{
+      glow+=5;
+      line.style.strokeWidth = 2 + Math.sin(glow*0.2);
+      if(glow>40) {
+        clearInterval(gInt);
+        line.style.stroke = 'rgba(255,255,255,0.3)';
+      }
+    },30);
+  }, 500);
+
+  // confetti burst
+  setTimeout(()=>{
+    const wrap = document.getElementById('cake-wrap');
+    const rect = wrap.getBoundingClientRect();
+    const colors = ['#f4a7b9','#e8c96d','#c9a8d8','#e8768f','#f7cba8','#d4b8e0'];
+    for(let i=0;i<28;i++){
+      const c = document.createElement('div');
+      c.className = 'confetto';
+      const angle = (Math.random()*360) * Math.PI/180;
+      const dist  = 60 + Math.random()*90;
+      c.style.setProperty('--cx', Math.cos(angle)*dist+'px');
+      c.style.setProperty('--cy', Math.sin(angle)*dist+'px');
+      c.style.setProperty('--cr', (Math.random()*720-360)+'deg');
+      c.style.background = colors[Math.floor(Math.random()*colors.length)];
+      c.style.left = '50%'; c.style.top = '50%';
+      c.style.marginLeft = '-3.5px'; c.style.marginTop = '-5px';
+      c.style.animationDelay = (Math.random()*0.3)+'s';
+      wrap.appendChild(c);
+      setTimeout(()=>c.remove(), 1800);
+    }
+  }, 600);
+
+  // hide hint, show wish message
+  document.getElementById('cake-hint').style.opacity = '0';
+  const msg = document.getElementById('wish-msg');
+  setTimeout(()=>msg.classList.add('show'), 900);
+}
+
+// ─────────────────────────────────────────────
+// HAPPY BIRTHDAY TUNE — Web Audio API
+// ─────────────────────────────────────────────
+(function happyBirthdayMusic(){
+  let started = false;
+  let ctx, masterGain;
+
+  const N = {
+    C4:261.63, D4:293.66, E4:329.63, F4:349.23,
+    G4:392.00, A4:440.00, B4:493.88,
+    C5:523.25, D5:587.33, E5:659.25, F5:698.46, G5:783.99
+  };
+
+  // Happy Birthday to You — [frequency, beats]
+  const song = [
+    [N.G4,0.75],[N.G4,0.25],[N.A4,1],[N.G4,1],[N.C5,1],[N.B4,2],
+    [N.G4,0.75],[N.G4,0.25],[N.A4,1],[N.G4,1],[N.D5,1],[N.C5,2],
+    [N.G4,0.75],[N.G4,0.25],[N.G5,1],[N.E5,1],[N.C5,1],[N.B4,1],[N.A4,2],
+    [N.F5,0.75],[N.F5,0.25],[N.E5,1],[N.C5,1],[N.D5,1],[N.C5,3]
+  ];
+
+  function playNote(freq, startT, durBeats, beatLen){
+    const dur = durBeats * beatLen;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, startT);
+    gain.gain.setValueAtTime(0, startT);
+    gain.gain.linearRampToValueAtTime(0.13, startT + 0.04);
+    gain.gain.setValueAtTime(0.10, startT + dur * 0.5);
+    gain.gain.linearRampToValueAtTime(0, startT + dur * 0.92);
+    osc.connect(gain); gain.connect(masterGain);
+    osc.start(startT); osc.stop(startT + dur + 0.05);
+
+    const osc2 = ctx.createOscillator();
+    const gain2 = ctx.createGain();
+    osc2.type = 'triangle';
+    osc2.frequency.setValueAtTime(freq * 2, startT);
+    gain2.gain.setValueAtTime(0, startT);
+    gain2.gain.linearRampToValueAtTime(0.04, startT + 0.04);
+    gain2.gain.linearRampToValueAtTime(0, startT + dur * 0.85);
+    osc2.connect(gain2); gain2.connect(masterGain);
+    osc2.start(startT); osc2.stop(startT + dur + 0.05);
+  }
+
+  function scheduleSong(){
+    if(!ctx) return;
+    const beatLen = 0.42;
+    let t = ctx.currentTime + 0.15;
+    song.forEach(([freq, beats]) => {
+      playNote(freq, t, beats, beatLen);
+      t += beats * beatLen;
+    });
+    const totalDur = song.reduce((sum,[,b])=>sum+b,0) * beatLen * 1000;
+    setTimeout(scheduleSong, totalDur + 1800);
+  }
+
+  function startMusic(){
+    if(started) return; started = true;
+    try {
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      masterGain = ctx.createGain();
+      masterGain.gain.value = 0.9;
+      const delay = ctx.createDelay(0.3);
+      const fb = ctx.createGain();
+      delay.delayTime.value = 0.22;
+      fb.gain.value = 0.18;
+      masterGain.connect(delay);
+      delay.connect(fb); fb.connect(delay);
+      masterGain.connect(ctx.destination);
+      delay.connect(ctx.destination);
+      scheduleSong();
+    } catch(e){}
+  }
+
+  ['click','touchstart'].forEach(ev => document.addEventListener(ev, startMusic, {once:true}));
+})();
+</script>
+</body>
+</html>
